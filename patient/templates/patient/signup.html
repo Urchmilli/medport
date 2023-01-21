@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Register</title>
+
+    <!-- Favicons -->
+    <link href="{%  static 'patient/assets/img/medical-1.png' %}" rel="icon">
+
+    <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link  rel="stylesheet" href="{% static 'patient/assets/css/bootstrap2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'patient/assets/vendor/remixicon/remixicon.css' %}">
+
+
+    <link href="{% static 'patient/assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-3 major">
+            <div class="card-body ">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    {% comment %} <div class="col-lg-5 d-none d-lg-block bg-login-image" style="background: url('{% static 'patient/assets/img/background3.jpg' %}'); background-position: center; background-size: cover"></div> {% endcomment %}
+                    <div class="col-lg-12 order-lg-last"> 
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h4 class="mt-0 py-2 mb-0">Register</h4>
+                                <hr>
+                            </div>
+                           
+                            <div> 
+
+                                <form action="/signup" method="POST" class="offset-1 col-lg-11">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" name="fname" id="fname" placeholder="Enter your First Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-10 ">
+                                            <input type="text" class="form-control" name="lname" id="lname" placeholder="Enter your Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-10 ">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email address">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-10 ">
+                                            <input type="text" class="form-control" id="username" name="userID" placeholder="Enter your userID" required/>
+                                        </div>
+                                    </div>
+                                    {% comment %} <div class="form-group row">
+                                        <div class="col-lg-10 ">
+                                            <input type="text" class="form-control" id="userID" name="userID" placeholder="Enter your userID" required/>
+                                        </div>
+                                    </div> {% endcomment %}
+                                    <div class="form-group row">
+                                        <div class="col-lg-10 ">
+                                            <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="Enter your Phone Number" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-6 ">
+                                            <select name="gender" class="form-control" id="gender" required>
+                                                <option value="other">Select your Gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Rather Not Say</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">    
+                                        <div class="col-lg-10">
+                                            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter your Password" required/>
+                                            <!-- <span id="show_password" style="color:#01953B;">show</span>    -->
+                                            <span class="eyeToggle">
+                                                <i class="fas fa-eye" id="eyeOpen"></i>
+                                                <i class="fas fa-eye-slash" id="eyeClosed"></i>
+                                              </span>
+                                        </div>
+                                    </div>  
+                                    <div class="form-group row">    
+                                        <div class="col-lg-10">
+                                            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Confirm your Password"/>
+                                            <span class="eyeToggle2">
+                                                <i class="fas fa-eye" id="eyeOpenkonfirm"></i>
+                                                <i class="fas fa-eye-slash" id="eyeClosedkonfirm"></i>
+                                            </span>
+                                            <p class="d-none">Password does not match</p>   
+                                        </div>
+                                    </div>  
+                                    <div class="form-group row">
+                                        <div class="col-lg-10 mb-1 mt-0">
+                                        <button type="submit" class="form-control btn">Register</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-10 offset-1">
+                                        <p class="">Already have an account? &nbsp;<a href="{% url 'patient:index' %}"> Login here</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> 
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

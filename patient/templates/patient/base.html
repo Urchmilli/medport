@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Complete mental wellness and healing" />
+    <meta
+      name="keywords"
+      content="mental health, healing, community, connection, open up"
+    />
+    <meta name="author" content="Victor  Nwulu, qashtek@outlook.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{%  static 'patient/assets/img/medical-1.png' %}" rel="icon">
+
+    <link
+      rel="stylesheet"
+      href="{% static 'patient/assets/fontawesome-free-5.15.4-web/css/all.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'patient/css/style.css' %}" />
+  </head>
+  <body>
+    <div class="overallWrap">
+      <header class="topMostHeader">
+        <div class="logo">
+          <img src="{%  static 'patient/assets/img/medical-1.png' %}" alt="" />
+          <span class="siteName">Medport</span>
+        </div>
+        <nav class="topNav">
+          <a href="{% url 'patient:index' %}">home</a>
+          <a href="{% url 'patient:about' %}">about</a>
+          <a href="{% url 'patient:services' %}">services</a>
+          <a href="{% url 'patient:contact' %}">contact</a>
+          <a href="{% url 'patient:blog' %}">blog</a>
+
+          <span class="cta">
+            <a href="" id="login">Login</a>
+            {% comment %} <a href="{% url 'patient:signup' %}">Get Started</a> {% endcomment %}
+            <a href="" id="getStarted">Get Started</a>
+          </span>
+        </nav>
+      </header>
+
+      <section class="section1">
+        <!-- REGISTRATION MODAL BOX -->
+        {% for message in messages %}
+          <div class="alert.alert-{{ message.tags }} alert-dismissible fade away" role="alert">
+          <stong>Message:</strong> {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+          </div>
+        {% endfor %}
+
+        <div class="modal-cta">
+          <form action="" method="post" id="regForm">
+            {% csrf_token %}
+            <h2>Register</h2>
+
+            <!-- FIRST NAME -->
+            <div class="formInput">
+              <input type="text" id="fname" name="fname" placeholder="Enter your First Name" required/>
+            </div>
+            <!-- LAST NAME -->
+            <div class="formInput">
+              <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required/>
+            </div>
+            <!-- EMAIL -->
+            <div class="formInput">
+              <input type="email" id="email" name="email"placeholder="Enter your Email address" required/>
+            </div>
+            <!-- USERNAME -->
+            <div class="formInput">
+              <input type="text" id="userID" name="username" placeholder="Enter your userID" required/>
+            </div>
+            <!-- PHONE NUMBER -->
+            <div class="formInput">
+              <input type="tel" id="telephone" name="telephone" placeholder="Enter your Phone Number" />
+            </div>
+            <!-- GENDER -->
+            <div class="formInput">
+              <select name="gender" id="gender" required>
+                <option value="other">Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Rather Not Say</option>
+              </select>
+            </div>
+            <!-- PASSWORD -->
+            <div class="formInput">
+              <input type="password" id="pass1" name="pass1" placeholder="Enter your Password" required/>
+
+              <span class="eyeToggle">
+                <i class="fas fa-eye" id="eyeOpen"></i>
+                <i class="fas fa-eye-slash" id="eyeClosed"></i>
+              </span>
+            </div>
+            <!-- CONFIRM PASSWORD -->
+            <div class="formInput">
+              <input
+                type="password" id="pass2" name="pass2"
+                placeholder="Confirm your Password"
+              />
+              <span class="eyeToggle2">
+                <i class="fas fa-eye" id="eyeOpenkonfirm"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedkonfirm"></i>
+              </span>
+            </div>
+            <!-- SUBMIT  -->
+            <div class="submitField">
+              <input type="submit"/>
+            </div>
+          </form>
+        </div>
+
+        <!-- LOGIN MODAL BOX -->
+        <div class="loginModal">
+          <form action="" method= "POST" id="loginForm">
+            {% csrf_token %}
+
+            <h2>Login</h2>
+
+            <div class="logform-Input">
+              <input
+                type="text"
+                placeholder="Enter your userID or Email address"
+              />
+            </div>
+
+            <div class="logform-Input">
+              <input
+                type="password"
+                name="pass1"
+                id="password"
+                placeholder="Enter your password"
+              />
+
+              <span class="loginToggle">
+                <i class="fas fa-eye" id="eyeOpenLogin"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedLogin"></i>
+              </span>
+            </div>
+
+            <div class="submitLogin">
+              <input type="submit" />
+            </div>
+          </form>
+        </div>
+
+    <main id="main" class="main">
+        {% block content %} {% endblock %}
+
+    <!-- FOOTER OF DOCUMENT -->
+    <footer>
+        <div class="topFoot">
+            <div class="desc">
+            <div class="footLogo">
+                <img src="{% static 'patient/assets/img/medical-1.png' %}" alt="" />
+                <span class="siteName">Medport</span>
+            </div>
+
+            <p>
+                Medport is a digital healthcare institution that provides
+                cutting-edge healthcare techniques and services to meet the needs
+                of an ever-expanding and highly demanding clientele.
+            </p>
+
+            <div class="socialIcons">
+                <a href="#">
+                <i class="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                <i class="fab fa-facebook"></i>
+                </a>
+                <a href="">
+                <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="">
+                <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            </div>
+
+            <div class="FooterLinkz">
+            <div class="footLink">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Contact</a>
+                <!-- <a href="">Blog</a> -->
+            </div>
+
+            <div class="footLink">
+                <h4>Services</h4>
+                <a href="">Diagnosis/ Therapy</a>
+                <a href="">Patient support</a>
+                <a href="">Secure medical records</a>
+                <a href="">safer billing and insurance</a>
+                <a href="">Emergency support</a>
+                <a href="">Prescriptions</a>
+            </div>
+
+            <div class="footLink">
+                <h4>Location</h4>
+                <a href=""> 10 Calabar Street, Aba, Nigeria. </a>
+            </div>
+            </div>
+        </div>
+
+        <div class="fullWidth">&copy; 2022 | All Rights reserved.</div>
+    </footer>
+
+<!-- SCRIPTS -->
+<script src="{% static 'patient/js/myScript.js' %}"></script>
+
+</body>
+</html>

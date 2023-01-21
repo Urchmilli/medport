@@ -1,0 +1,307 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Medport</title>
+
+    <link href="{%  static 'patient/assets/img/medical-1.png' %}" rel="icon">
+
+
+    <link rel="stylesheet" href="{% static 'patient/assets/custom_css/css_dashboard.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'patient/assets/fontawesome-free-5.15.4-web/css/all.css' %}"
+    />
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <section class="DashBoard">
+      <!-- SIDE BAR -->
+      <aside class="leftSideBar">
+        <div class="Dashlogo">
+          <img src="{%  static 'patient/assets/img/medical-1.png' %}" alt="" />
+          <span class="siteName">Medport</span>
+        </div>
+
+        <h4 class="userGreeting">
+          Welcome {{ fname }}! &nbsp;&nbsp;&nbsp;
+          <i class="fas fa-hand-holding-medical"></i>
+        </h4>
+
+        <!-- DASHBOARD LINKS -->
+        <div class="dashLinks">
+          <h3>Dashboard</h3>
+          <a href="" class="dash-link">
+            <i class="fas fa-home"></i>&nbsp;Home
+          </a>
+          <a href="#diagnosis-section" class="dash-link"
+            ><i class="fas fa-diagnoses"></i>&nbsp;Diagnosis
+          </a>
+          <a href="#admission" class="dash-link"
+            ><i class="fas fa-hospital-user"></i>&nbsp;Admission
+          </a>
+
+          <a href="" class="dash-link"
+            ><i class="fas fa-prescription-bottle-alt"></i>&nbsp;Prescription
+          </a>
+          <a href="" class="dash-link"
+            ><i class="fas fa-file-medical"></i>&nbsp;medical history
+          </a>
+          <a href="" class="dash-link"
+            ><i class="fas fa-hand-holding-usd"></i>&nbsp;Payments and insurance
+          </a>
+          <a href="" class="dash-link"
+            ><i class="fas fa-wheelchair"></i>&nbsp;Patient Support
+          </a>
+        </div>
+
+        <!-- USER SIGN OUT -->
+        <div class="logout">
+          <a href="{% url 'patient:index' %}"
+            ><i class="fas fa-arrow-alt-circle-left"></i>&nbsp;sign out
+            <i></i>
+          </a>
+        </div>
+      </aside>
+      <!-- MAIN DASHBOARD SECTION -->
+      <main class="mainDash">
+        <header class="dashHeader">
+          <input
+            type="search"
+            name="search"
+            id="searchBar"
+            placeholder="Search here..."
+          />
+          <div class="dashIcon1">
+            <i class="far fa-bell"></i>
+          </div>
+          <div class="dashIcon2">
+            <i class="far fa-comment-alt"></i>
+          </div>
+          <div class="profileAvatar">
+            <i class="fas fa-user-alt"></i>
+          </div>
+        </header>
+
+        <!-- INNER DASHBOARD SECTION -->
+        <section class="innerDash">
+          <div class="cardsWrap">
+            <div class="dashCards">
+              <p class="card-icon">
+                <i class="fas fa-user-md"></i>
+              </p>
+              <p class="card-stat">450</p>
+              <p class="card-title">Doctors</p>
+            </div>
+            <div class="dashCards">
+              <p class="card-icon">
+                <i class="fas fa-user-nurse"></i>
+              </p>
+              <p class="card-stat">3000</p>
+              <p class="card-title">Nurses</p>
+            </div>
+            <div class="dashCards">
+              <p class="card-icon">
+                <i class="fas fa-wheelchair"></i>
+              </p>
+              <p class="card-stat">5000</p>
+              <p class="card-title">Active Patients</p>
+            </div>
+            <div class="dashCards">
+              <p class="card-icon">
+                <i class="fas fa-prescription-bottle"></i>
+              </p>
+              <p class="card-stat">2042</p>
+              <p class="card-title">Pharmacists</p>
+            </div>
+          </div>
+
+          <!-- DIAGNOSIS -->
+          <div id="diagnosis-section">
+            <h2>How do you feel today?</h2>
+
+            <div class="samples">
+              <a href="" class="suggestions">Difficult breathing</a>
+              <a href="" class="suggestions">Sore throat</a>
+              <a href="" class="suggestions">Headache</a>
+              <a href="" class="suggestions">fever</a>
+              <a href="" class="suggestions">Body pain</a>
+              <a href="" class="suggestions">Stomach pain</a>
+              <a href="" class="suggestions">Blurry Vision</a>
+              <a href="" class="suggestions">Bleeding</a>
+              <a href="" class="suggestions">Loss of apetite</a>
+              <a href="" class="suggestions">other</a>
+            </div>
+
+            <div class="covid">
+              <h3>Learn how to protect yourself from covid-19</h3>
+              <p>Get to know more about covid-19 and how to prevent it</p>
+              <a href="">Learn more </a>
+            </div>
+
+            <!-- check medical results -->
+            <div class="check-result">
+              <h3>Medical check-up results</h3>
+              <a href="">Learn More &raquo;</a>
+
+              <div class="check-options">
+                <div class="option-box">
+                  <p class="opt-icon">
+                    <i class="fas fa-heartbeat"></i>
+                  </p>
+                  <p class="opt-title">Heart rate</p>
+                  <p class="opt-desc">
+                    Check your pulse and know the state of your heart beat
+                  </p>
+                </div>
+                <div class="option-box">
+                  <p class="opt-icon">
+                    <i class="fas fa-egg"></i>
+                  </p>
+                  <p class="opt-title">Blood pressure</p>
+                  <p class="opt-desc">
+                    Blood flow is very vital for healthy living and must be
+                    checked regularly
+                  </p>
+                </div>
+                <div class="option-box">
+                  <p class="opt-icon">
+                    <i class="fas fa-thermometer"></i>
+                  </p>
+                  <p class="opt-title">Temperature</p>
+                  <p class="opt-desc">Check your body temperature</p>
+                </div>
+                <div class="option-box">
+                  <p class="opt-icon">
+                    <i class="fas fa-ice-cream"></i>
+                  </p>
+                  <p class="opt-title">Glucose</p>
+                  <p class="opt-desc">check your glucose levels</p>
+                </div>
+                <div class="option-box">
+                  <p class="opt-icon">
+                    <i class="fas fa-disease"></i>
+                  </p>
+                  <p class="opt-title">Cholestrol</p>
+                  <p class="opt-desc">
+                    Check the amount of cholresterol and fats in your blood
+                  </p>
+                </div>
+                <div class="option-box">
+                  <p class="opt-icon">
+                    <i class="fas fa-hamburger"></i>
+                  </p>
+                  <p class="opt-title">Essential nutrients</p>
+                  <p class="opt-desc">
+                    Check your body for the most basic nutrients you need to
+                    live healthy
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ADMISSION FORM  SECT-->
+          <div id="admission">
+            <h2>Patient's admission application</h2>
+            <form action="/dashboard" id="admission-form" method="POST">
+            {% csrf_token %}
+              <div class="input-field">
+                <label>first name:</label><br />
+                <input
+                  type="text"
+                  id="first-name" name="first_name"
+                  placeholder="Enter your first name here..."
+                />
+              </div>
+              <div class="input-field">
+                <label>last name:</label><br />
+                <input
+                  type="text"
+                  id="last-name" name="last_name"
+                  placeholder="Enter your last name here..."
+                />
+              </div>
+              <div class="input-field">
+                <label>Residential Address:</label><br />
+                <input
+                  type="text"
+                  id="reside-address" name="residential_address"
+                  placeholder="Enter your Residential address here..."
+                />
+              </div>
+              <div class="input-field">
+                <label>Date of Birth:</label><br />
+                <input type="date" name="date_of_birth"/>
+              </div>
+              <div class="input-field">
+                <label>Gender:</label><br />
+                <select name="gender" id="sex">
+                  <option value="male">male</option>
+                  <option value="female">female</option>
+                  <option value="other">other</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <label>Date Admitted:</label><br />
+                <input type="date" name="date_admitted"/>
+              </div>
+              <div class="input-field">
+                <label>Ward:</label><br />
+                <select name="ward" id="ward">
+                  <option value="emergency">emergency/ casualty</option>
+                  <option value="orthopaedic">Orthopaedic</option>
+                  <option value="General">General</option>
+                  <option value="special">SPecial</option>
+                  <option value="Deluxe">Deluxe</option>
+                  <option value="CCU">CCU</option>
+                  <option value="ICCU">ICCU</option>
+                  <option value="SICU">SICU</option>
+                  <option value="burn">burn</option>
+                  <option value="NICU">NICU</option>
+                  <option value="PICU">PICU</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>phone number:</label><br />
+                <input type="tel" name="phone_number" placeholder="enter your phone number" />
+              </div>
+
+              <div class="input-field">
+                <label>Symptoms/ Diagnosis:</label><br />
+                <textarea
+                  name="symptoms"
+                  id=""
+                  cols="30"
+                  rows="10"
+                  id="diagnosis"
+                  placeholder="Add text here..."
+                ></textarea>
+              </div>
+
+              <div class="input-field">
+                <label>Patient ID:</label><br />
+                <input
+                  type="text"
+                  name="patient_id"
+                  id="reg-number"
+                  placeholder="Enter your unique identification number here..."
+                />
+              </div>
+              <div class="input-field">
+                <input type="submit" value="submit" />
+              </div>
+            </form>
+          </div>
+
+          <!-- prescription -->
+          <div class="prescription"></div>
+        </section>
+      </main>
+    </section>
+    {% endif %}
+  </body>
+</html>

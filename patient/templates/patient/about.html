@@ -1,0 +1,641 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Complete mental wellness and healing" />
+    <meta
+      name="keywords"
+      content="mental health, healing, community, connection, open up"
+    />
+    <meta name="author" content="Victor  Nwulu, qashtek@outlook.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About | Medport</title>
+    <link href="{%  static 'patient/assets/img/medical-1.png' %}" rel="icon">
+
+    <link
+      rel="stylesheet"
+      href="{% static 'patient/assets/fontawesome-free-5.15.4-web/css/all.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'patient/assets/custom_css/css_about.css' %}" />
+  </head>
+  <body>
+    <div class="overallWrap">
+      <header class="topMostHeader">
+        <div class="logo">
+          <img src="{%  static 'patient/assets/img/medical-1.png' %}" alt="" />
+          <span class="siteName">Medport</span>
+        </div>
+        <nav class="topNav">
+          <a href="{% url 'patient:index' %}">home</a>
+          <a href="{% url 'patient:about' %}">about</a>
+          <a href="{% url 'patient:services' %}">services</a>
+          <a href="{% url 'patient:contact' %}">contact</a>
+          <a href="{% url 'patient:blog' %}">blog</a>
+
+          <span class="cta">
+            <a href="" id="login">Login</a>
+            <a href="" id="getStarted">Get Started</a>
+          </span>
+        </nav>
+      </header>
+
+      <section class="section1">
+        <!-- REGISTRATION MODAL BOX -->
+        <div class="modal-cta">
+          <form action="" id="regForm">
+            <h2>Register</h2>
+
+            <!-- FIRST NAME -->
+            <div class="formInput">
+              <input type="text" placeholder="Enter your First Name" />
+            </div>
+            <!-- LAST NAME -->
+            <div class="formInput">
+              <input type="text" placeholder="Enter your Last Name" />
+            </div>
+            <!-- EMAIL -->
+            <div class="formInput">
+              <input type="email" placeholder="Enter your Email address" />
+            </div>
+            <!-- USERNAME -->
+            <div class="formInput">
+              <input type="text" placeholder="Enter your userID" />
+            </div>
+            <!-- PHONE NUMBER -->
+            <div class="formInput">
+              <input type="tel" placeholder="Enter your Phone Number" />
+            </div>
+            <!-- GENDER -->
+            <div class="formInput">
+              <select name="gender" id="gender">
+                <option value="other">Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Rather Not Say</option>
+              </select>
+            </div>
+            <!-- PASSWORD -->
+            <div class="formInput">
+              <input
+                type="password"
+                placeholder="Enter your Password"
+                id="regPassword"
+              />
+              <span class="eyeToggle">
+                <i class="fas fa-eye" id="eyeOpen"></i>
+                <i class="fas fa-eye-slash" id="eyeClosed"></i>
+              </span>
+            </div>
+            <!-- CONFIRM PASSWORD -->
+            <div class="formInput">
+              <input
+                type="password"
+                placeholder="Confirm your Password"
+                id="confirmRegPass"
+              />
+              <span class="eyeToggle2">
+                <i class="fas fa-eye" id="eyeOpenkonfirm"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedkonfirm"></i>
+              </span>
+            </div>
+            <!-- SUBMIT  -->
+            <div class="submitField">
+              <input type="submit" value="Sign Up" />
+            </div>
+          </form>
+        </div>
+
+        <!-- LOGIN MODAL BOX -->
+        <div class="loginModal">
+          <form action="" id="loginForm">
+            <h2>Login</h2>
+
+            <div class="logform-Input">
+              <input
+                type="text"
+                placeholder="Enter your userID or Email address"
+              />
+            </div>
+
+            <div class="logform-Input">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password"
+              />
+
+              <span class="loginToggle">
+                <i class="fas fa-eye" id="eyeOpenLogin"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedLogin"></i>
+              </span>
+            </div>
+
+            <div class="submitLogin">
+              <input type="submit" value="Sign In" />
+            </div>
+          </form>
+        </div>
+
+        <!-- ABOUT US -->
+        <div class="aboutDesc">
+          <h1>about us</h1>
+          <p>
+            Medport is a digital healthcare institution that provides
+            cutting-edge healthcare techniques and services to meet the needs of
+            an ever-expanding and discriminating clientele.
+          </p>
+          <a href="">explore more</a>
+        </div>
+
+        <div class="users">
+          <p class="user-icon">
+            <i class="fas fa-users"></i>
+          </p>
+          <p class="count" data-val="1000">0</p>
+          <p class="paraf">members</p>
+        </div>
+
+        <div class="professionals">
+          <p class="pro-icon">
+            <i class="fas fa-user-md"></i>
+          </p>
+          <p class="count" data-val="100">0</p>
+          <p class="paraf">professionals</p>
+        </div>
+
+        <!-- MAIN BODY OF DOCUMENT -->
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="section2">
+        <!-- OUR VISION -->
+        <div class="ourVision">
+          <div class="split-vision LeftV">
+            <h2>Our vision</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+              pariatur consequuntur cum porro aspernatur vero nihil blanditiis
+              perspiciatis. Error, officiis possimus. Veritatis, quos similique.
+              Inventore ducimus praesentium ipsa totam saepe vel rem voluptate
+              eligendi sint?
+            </p>
+
+            <a href="#">Partner with us &raquo; </a>
+          </div>
+
+          <div class="split-vision comp-profile">
+            <div class="imgbox">
+              <img src="{% static 'patient/assets/img/support1.jpg' %}" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- OUR CORE VALUES -->
+
+        <div class="coreValues">
+          <div class="splitCore leftcore">
+            <h2>our core values</h2>
+            <p class="LcoreTxt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              nobis quos hic dignissimos assumenda, impedit molestiae eveniet
+              minima, est ratione consequatur architecto voluptatem sed
+              voluptatibus ut alias consequuntur suscipit totam.
+            </p>
+          </div>
+          <div class="splitCore rightcore">
+            <div class="rightCoreBox">
+              <p class="core-icon">
+                <i class="fas fa-book-open"></i>
+              </p>
+              <p class="core-title">Transparency</p>
+              <p class="core-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                aut culpa eveniet expedita optio quaerat facere. Hic, mollitia
+                quo! Quidem.
+              </p>
+            </div>
+            <div class="rightCoreBox">
+              <p class="core-icon">
+                <i class="fas fa-hands-helping"></i>
+              </p>
+              <p class="core-title">Commitment</p>
+              <p class="core-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                aut culpa eveniet expedita optio quaerat facere. Hic, mollitia
+                quo! Quidem.
+              </p>
+            </div>
+            <div class="rightCoreBox">
+              <p class="core-icon">
+                <i class="fas fa-balance-scale"></i>
+              </p>
+              <p class="core-title">Integrity</p>
+              <p class="core-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                aut culpa eveniet expedita optio quaerat facere. Hic, mollitia
+                quo! Quidem.
+              </p>
+            </div>
+            <div class="rightCoreBox">
+              <p class="core-icon">
+                <i class="fas fa-bullseye"></i>
+              </p>
+              <p class="core-title">Delivery</p>
+              <p class="core-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                aut culpa eveniet expedita optio quaerat facere. Hic, mollitia
+                quo! Quidem.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TESTIMONIALS -->
+        <div class="testimony">
+          <h2>testimonials</h2>
+          <p>what our clients say based on their experience with our service</p>
+
+          <div class="testimonyBox">
+            <div class="revOverflow">
+              <!-- Review boxes -->
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client3.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img
+                      src="{% static 'patient/assets/img/excited-young-man-celebrating-success-making-fist-pump-move-shouting-happy-winning-rejoicing-white-background.jpg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img
+                      src="{% static 'patient/assets/img/senior-man-face-portrait-wearing-bowler-hat.jpg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="reviewDiv">
+                <div class="picStarBox">
+                  <div class="imgClient">
+                    <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                  </div>
+                  <p class="ratingstar">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </p>
+                </div>
+                <p class="clientName">John Doe</p>
+                <p class="review-text">
+                  <i class="fas fa-quote-left"></i>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Earum nesciunt cumque optio odit beatae velit. Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Consequatur eaque
+                  vel aperiam optio minima id!
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNERSHIPS -->
+        <div class="partnership">
+          <img src="{% static 'patient/assets/img/Techstars.jpg' %}" width="100%" alt="" />
+          <img src="{% static 'patient/assets/img/igHub.png' %}" width="100%" alt="" />
+          <img src="{% static 'patient/assets/img/connak-logo.png' %}" width="100%" alt="" />
+          <img src="{% static 'patient/assets/img/gdg-aba.png' %}" width="100%" alt="" />
+        </div>
+
+        <!-- OUR TEAM -->
+        <div class="ourTeam">
+          <div class="team-half left-team">
+            <h2>our team</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+              repudiandae aliquam molestias sapiente quibusdam. Deleniti. Lorem
+              ipsum, dolor sit amet consectetur adipisicing elit. Pariatur,
+              deserunt.
+            </p>
+          </div>
+          <div class="team-half right-team">
+            <div class="team-card">
+              <div class="imgcircleBox"></div>
+              <h3>John Doe</h3>
+              <p>founder & CEO</p>
+            </div>
+            <div class="team-card">
+              <div class="imgcircleBox"></div>
+              <h3>John Doe</h3>
+              <p>founder & CEO</p>
+            </div>
+            <div class="team-card">
+              <div class="imgcircleBox"></div>
+              <h3>John Doe</h3>
+              <p>founder & CEO</p>
+            </div>
+            <div class="team-card">
+              <div class="imgcircleBox"></div>
+              <h3>John Doe</h3>
+              <p>founder & CEO</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUR NEWSLETTER -->
+        <div class="newsletter">
+          <h2>get our newsletter</h2>
+          <p>
+            Stay updated with the latest tips on mental health and related
+            resources
+          </p>
+          <form action="#">
+            <input
+              type="email"
+              name="emailNewsLetter"
+              id="emailNewsLetter"
+              placeholder="your email address"
+              required
+            />
+            <input type="submit" value="subscribe" id="submitNewsLetter" />
+          </form>
+        </div>
+      </section>
+
+      <!-- OUR TEAM -->
+
+      <!-- FOOTER OF DOCUMENT -->
+      <footer>
+        <div class="topFoot">
+          <div class="desc">
+            <div class="footLogo">
+              <img src="{% static 'patient/assets/img/medical-1.png' %}"alt="" />
+              <span class="siteName">Medport</span>
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus explicabo fugit cum architecto impedit eligendi eveniet
+              tenetur unde aut quidem?
+            </p>
+
+            <div class="socialIcons">
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="FooterLinkz">
+            <div class="footLink">
+              <h4>Quick Links</h4>
+              <a href="{% url 'patient:index' %}">home</a>
+              <a href="{% url 'patient:about' %}">about</a>
+              <a href="{% url 'patient:services' %}">services</a>
+              <a href="{% url 'patient:contact' %}">contact</a>
+              <a href="{% url 'patient:blog' %}">blog</a>
+            </div>
+
+            <div class="footLink">
+              <h4>Services</h4>
+              <a href="">Diagnosis/ Therapy</a>
+              <a href="">Patient support</a>
+              <a href="">Secure medical records</a>
+              <a href="">safer billing and invoicing</a>
+              <a href="">Emergency support</a>
+              <a href="">Prescriptions</a>
+            </div>
+
+            <div class="footLink">
+              <h4>Location</h4>
+              <a href=""> 10 Calabar Street, Aba, Nigeria. </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fullWidth">&copy; 2022 | All Rights reserved.</div>
+      </footer>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="{% static 'patient/js/myScript.js' %}"></script>
+  </body>
+</html>

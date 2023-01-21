@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Complete mental wellness and healing" />
+    <meta
+      name="keywords"
+      content="mental health, healing, community, connection, open up"
+    />
+    <meta name="author" content="Victor  Nwulu, qashtek@outlook.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog | Open Upp</title>
+    <link href="{%  static 'patient/assets/img/medical-1.png' %}" rel="icon">
+
+    <link
+      rel="stylesheet"
+      href="{% static 'patient/assets/fontawesome-free-5.15.4-web/css/all.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'patient/assets/custom_css/css_blog.css' %}" />  </head>
+  <body>
+    <div class="overallWrap">
+      <header class="topMostHeader">
+        <div class="logo">
+          <img src="{% static 'patient/assets/img/open.png' %}" alt="" />
+        </div>
+        <nav class="topNav">
+          <a href="{% url 'patient:index' %}">home</a>
+          <a href="{% url 'patient:about' %}">about</a>
+          <a href="{% url 'patient:services' %}">services</a>
+          <a href="{% url 'patient:contact' %}">contact</a>
+          <a href="{% url 'patient:blog' %}">blog</a>
+
+          <span class="cta">
+            <a href="" id="login">Login</a>
+            <a href="" id="getStarted">Get Started</a>
+          </span>
+        </nav>
+      </header>
+
+      <section class="section1">
+        <!-- REGISTRATION MODAL BOX -->
+        <div class="modal-cta">
+          <form action="" id="regForm">
+            <h2>Register</h2>
+
+            <!-- FIRST NAME -->
+            <div class="formInput">
+              <input type="text" placeholder="Enter your First Name" />
+            </div>
+            <!-- LAST NAME -->
+            <div class="formInput">
+              <input type="text" placeholder="Enter your Last Name" />
+            </div>
+            <!-- EMAIL -->
+            <div class="formInput">
+              <input type="email" placeholder="Enter your Email address" />
+            </div>
+            <!-- USERNAME -->
+            <div class="formInput">
+              <input type="text" placeholder="Enter your userID" />
+            </div>
+            <!-- PHONE NUMBER -->
+            <div class="formInput">
+              <input type="tel" placeholder="Enter your Phone Number" />
+            </div>
+            <!-- GENDER -->
+            <div class="formInput">
+              <select name="gender" id="gender">
+                <option value="other">Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Rather Not Say</option>
+              </select>
+            </div>
+            <!-- PASSWORD -->
+            <div class="formInput">
+              <input
+                type="password"
+                placeholder="Enter your Password"
+                id="regPassword"
+              />
+              <span class="eyeToggle">
+                <i class="fas fa-eye" id="eyeOpen"></i>
+                <i class="fas fa-eye-slash" id="eyeClosed"></i>
+              </span>
+            </div>
+            <!-- CONFIRM PASSWORD -->
+            <div class="formInput">
+              <input
+                type="password"
+                placeholder="Confirm your Password"
+                id="confirmRegPass"
+              />
+              <span class="eyeToggle2">
+                <i class="fas fa-eye" id="eyeOpenkonfirm"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedkonfirm"></i>
+              </span>
+            </div>
+            <!-- SUBMIT  -->
+            <div class="submitField">
+              <input type="submit" value="Sign Up" />
+            </div>
+          </form>
+        </div>
+
+        <!-- LOGIN MODAL BOX -->
+        <div class="loginModal">
+          <form action="" id="loginForm">
+            <h2>Login</h2>
+
+            <div class="logform-Input">
+              <input
+                type="text"
+                placeholder="Enter your userID or Email address"
+              />
+            </div>
+
+            <div class="logform-Input">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Enter your password"
+              />
+
+              <span class="loginToggle">
+                <i class="fas fa-eye" id="eyeOpenLogin"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedLogin"></i>
+              </span>
+            </div>
+
+            <div class="submitLogin">
+              <input type="submit" value="Sign In" />
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="section2"></section>
+
+      <!-- FOOTER OF DOCUMENT -->
+      <footer>
+        <div class="topFoot">
+          <div class="desc">
+            <div class="footLogo">
+              <img src="{% static 'patient/assets/img/open.png' %}" alt="" />
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusamus explicabo fugit cum architecto impedit eligendi eveniet
+              tenetur unde aut quidem?
+            </p>
+
+            <div class="socialIcons">
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="FooterLinkz">
+            <div class="footLink">
+              <h4>Quick Links</h4>
+                <a href="{% url 'patient:index' %}">home</a>
+                <a href="{% url 'patient:about' %}">about</a>
+                <a href="{% url 'patient:services' %}">services</a>
+                <a href="{% url 'patient:contact' %}">contact</a>
+                <a href="{% url 'patient:blog' %}">blog</a>
+            </div>
+
+            <div class="footLink">
+              <h4>Services</h4>
+              <a href="">Diagnosis/ Therapy</a>
+              <a href="">Patient support</a>
+              <a href="">Secure medical records</a>
+              <a href="">safer billing and invoicing</a>
+              <a href="">Emergency support</a>
+              <a href="">Prescriptions</a>
+            </div>
+
+            <div class="footLink">
+              <h4>Location</h4>
+              <a href=""> 10 Calabar Street, Aba, Nigeria. </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fullWidth">&copy; 2022 | All Rights reserved.</div>
+      </footer>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="{% static 'patient/js/myScript.js' %}"></script>
+  </body>
+</html>

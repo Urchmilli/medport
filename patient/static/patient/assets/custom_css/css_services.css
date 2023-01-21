@@ -1,0 +1,536 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.overallWrap {
+  width: 100%;
+  height: auto;
+  /* border: 2px solid red; */
+}
+
+.topMostHeader {
+  width: 100%;
+  height: 100px;
+  /* border: 2px solid firebrick; */
+  background: #e6f5fc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 2;
+  /* background: #444; */
+}
+
+.logo {
+  width: 80px;
+  height: 80%;
+  /* border: 2px solid hotpink; */
+  margin-left: 70px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5px;
+}
+
+.topNav {
+  width: 70%;
+  height: 100%;
+  /* border: 2px dashed brown; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topNav a {
+  text-decoration: none;
+  padding: 10px 17px;
+  /* border: 1px solid blue; */
+  margin: 0 7px;
+  text-transform: capitalize;
+  color: #111;
+  font-weight: 500;
+  transition: 0.05s ease;
+}
+
+.cta {
+  /* border: 2px dashed green; */
+  margin-left: 120px;
+}
+
+.cta #getStarted {
+  background: #009fe1;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+#login:hover {
+  background: #009fe1;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+#getStarted:hover {
+  background: #00435f;
+}
+
+.topNav a:hover {
+  color: #0071a0;
+  border-bottom: 2px solid #0071a0;
+  border-radius: 10%;
+}
+
+.section1 {
+  position: relative;
+  top: 100px;
+  /* border: 5px solid fuchsia; */
+  width: 100%;
+  height: 1500px;
+}
+
+.modal-cta {
+  width: 500px;
+  height: 550px;
+  background: #00435fd3;
+  position: fixed;
+  right: 70px;
+  top: 105px;
+  box-shadow: 2px 2px 14px rgb(50, 48, 48);
+  padding: 20px;
+  display: none;
+  z-index: 2;
+  border-radius: 0 0 5px 5px;
+  animation-name: animeUp;
+  animation-duration: 1s;
+}
+
+@keyframes animeUp {
+  from {
+    right: -200px;
+    opacity: 0;
+  }
+  to {
+    right: 70px;
+    opacity: 1;
+  }
+}
+
+.modal-cta #regForm {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #b0e1f69b;
+  padding: 0 20px;
+}
+
+#regForm h2 {
+  font-weight: 500;
+  text-align: start;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 1.7em;
+}
+
+.formInput {
+  width: 100%;
+  height: 40px;
+  /* border: 2px dashed teal; */
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+}
+
+.formInput input {
+  width: 70%;
+  /* margin-left: 10px; */
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.4s ease;
+  font-size: 0.9em;
+}
+
+.formInput input::placeholder {
+  color: #444;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.formInput input:focus {
+  width: 90%;
+}
+
+.formInput select {
+  padding: 5px;
+  /* margin-left: 10px; */
+  border-radius: 4px;
+  border: none;
+  color: #444;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.formInput option {
+  color: #444;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+#regForm .submitField {
+  width: 100%;
+  height: 45px;
+  /* border: 1px solid rgb(176, 166, 166); */
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-start;
+  /* padding-left: 8px; */
+}
+
+.submitField input {
+  width: 60%;
+  padding: 7px;
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #fff;
+  background: #111;
+  border: none;
+  transition: 0.4s ease;
+}
+
+.submitField input:hover {
+  width: 70%;
+  cursor: pointer;
+  border: 1px solid #b0e1f6;
+  box-shadow: 5px 5px 15px #2b2b2b;
+}
+
+#regForm .eyeToggle,
+.eyeToggle2 {
+  margin-left: -35px;
+  position: relative;
+  cursor: pointer;
+}
+
+#eyeClosed,
+#eyeClosedkonfirm {
+  display: none;
+}
+
+.loginModal {
+  width: 400px;
+  height: 350px;
+  background: #00435fd3;
+  position: fixed;
+  right: 70px;
+  top: 105px;
+  box-shadow: 2px 2px 14px rgb(50, 48, 48);
+  padding: 20px;
+  display: none;
+  z-index: 2;
+  border-radius: 0 0 5px 5px;
+  animation-name: loginAnime;
+  animation-duration: 1s;
+}
+
+@keyframes loginAnime {
+  from {
+    right: -200px;
+    opacity: 0;
+  }
+  to {
+    right: 70px;
+    opacity: 1;
+  }
+}
+
+.loginModal h2 {
+  padding: 10px 0;
+  text-align: start;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.loginModal form {
+  border: 1px solid #b0e1f6;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+}
+
+.logform-Input {
+  width: 100%;
+  height: 40px;
+  /* border: 2px dashed teal; */
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.logform-Input input {
+  width: 70%;
+  /* margin-left: 10px; */
+  padding: 7px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.4s ease;
+  font-size: 0.9em;
+  position: relative;
+}
+
+.logform-Input input::placeholder {
+  color: #444;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.logform-Input input:focus {
+  width: 90%;
+}
+
+.loginToggle {
+  margin-left: -35px;
+  position: relative;
+  cursor: pointer;
+}
+
+#eyeClosedLogin {
+  display: none;
+}
+
+.submitLogin {
+  width: 100%;
+  height: 45px;
+  /* border: 1px solid rgb(176, 166, 166); */
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-start;
+  /* padding-left: 8px; */
+}
+
+.submitLogin input {
+  width: 60%;
+  padding: 7px;
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #fff;
+  background: #111;
+  border: none;
+  transition: 0.4s ease;
+}
+
+.submitLogin input:hover {
+  width: 70%;
+  cursor: pointer;
+  border: 1px solid #b0e1f6;
+  box-shadow: 5px 5px 15px #2b2b2b;
+}
+
+/* main top section */
+.servicesheader {
+  width: 100%;
+  height: 400px;
+  /* border: 2px solid #0071a0; */
+  background: #009fe1 url("../../assets/img/medical-4.png") repeat fixed center
+    right 100px;
+  padding: 70px;
+}
+
+.servicesheader h2 {
+  color: #fff;
+  font-size: 2.7em;
+  font-weight: bold;
+  padding: 10px;
+  background: rgba(26, 22, 22, 0.383);
+  width: 40%;
+}
+
+.servicesheader p {
+  color: #00435f;
+  font-size: 1em;
+  width: 40%;
+  background: rgba(255, 248, 248, 0.808);
+  padding: 10px;
+  font-weight: 500;
+}
+
+.servicesWeProvide {
+  font-size: 2em;
+  font-weight: 500;
+  margin: 60px 70px;
+  border-left: 4px solid #0071a0;
+  padding: 5px;
+  color: #0071a0;
+}
+
+/* service racks */
+.serviceRacks {
+  width: 100%;
+  height: 800px;
+  /* border: 2px solid red; */
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.servyBox {
+  width: 30%;
+  height: 45%;
+  /* border: 2px dashed purple; */
+  padding: 25px;
+  box-shadow: 1px 1px 20px #777;
+}
+
+.servyBox .servyIcon {
+  font-size: 5.5em;
+  text-align: center;
+  color: #009fe1;
+}
+
+.servyTitle {
+  font-weight: 500;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 10px;
+  color: #00435f;
+}
+
+.servyDesc {
+  font-size: 1em;
+  font-style: italic;
+  text-align: justify;
+  color: #00435f;
+}
+/* FOOTER */
+footer {
+  width: 100%;
+  height: 500px;
+  padding: 0 70px;
+  background: #b0e1f6;
+  position: relative;
+  bottom: 0;
+  margin-top: 100px;
+}
+
+.topFoot {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  width: 100%;
+  /* border: 2px solid goldenrod; */
+}
+
+.desc {
+  width: 30%;
+  height: 100%;
+  /* border: 2px dashed rebeccapurple; */
+  padding-top: 35px;
+  margin-right: 15px;
+}
+
+.footLogo {
+  width: 80px;
+  height: 80px;
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.footLogo img {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5px;
+}
+
+.siteName {
+  margin-top: 50px;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-variant: small-caps;
+}
+
+.desc p {
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 15px 0;
+  text-align: justify;
+}
+
+.socialIcons {
+  width: 100%;
+  height: 50px;
+  /* border: 2px dashed firebrick; */
+}
+
+.socialIcons a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #111;
+  transition: 0.2s linear;
+}
+
+.socialIcons a:hover {
+  color: #0071a0;
+  text-shadow: 2px 2px 15px -3px #111;
+}
+.fab {
+  padding-right: 7px;
+}
+
+.FooterLinkz {
+  width: 70%;
+  height: 100%;
+  /* border: 2px dashed red; */
+  display: flex;
+  flex-direction: row;
+}
+
+.footLink {
+  width: 30%;
+  height: 100%;
+  /* border: 2px solid #111; */
+  margin: 0 15px;
+  text-align: center;
+  padding-top: 35px;
+  text-transform: capitalize;
+}
+
+.footLink h4 {
+  padding-bottom: 10px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.footLink a {
+  display: block;
+  text-decoration: none;
+  color: #111;
+  line-height: 2;
+  font-size: 0.9em;
+  padding: 5px;
+}
+
+.footLink a:hover {
+  font-weight: 500;
+  color: #00435f;
+  background: rgba(255, 255, 255, 0.281);
+}
+
+.fullWidth {
+  text-align: center;
+  font-size: 0.9em;
+  padding-top: 20px;
+  border-top: 2px solid #00435f;
+}

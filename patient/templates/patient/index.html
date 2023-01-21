@@ -1,0 +1,596 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Complete mental wellness and healing" />
+    <meta
+      name="keywords"
+      content="mental health, healing, community, connection, open up"
+    />
+    <meta name="author" content="Victor  Nwulu, qashtek@outlook.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Medport</title>
+    <link href="{%  static 'patient/assets/img/medical-1.png' %}" rel="icon">
+
+    <link
+      rel="stylesheet"
+      href="{% static 'patient/assets/fontawesome-free-5.15.4-web/css/all.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'patient/css/style.css' %}" />
+  </head>
+  <body>
+    <div class="overallWrap">
+      <header class="topMostHeader">
+        <div class="logo">
+          <img src="{%  static 'patient/assets/img/medical-1.png' %}" alt="" />
+          <span class="siteName">Medport</span>
+        </div>
+        <nav class="topNav">
+          <a href="{% url 'patient:index' %}">home</a>
+          <a href="{% url 'patient:about' %}">about</a>
+          <a href="{% url 'patient:services' %}">services</a>
+          <a href="{% url 'patient:contact' %}">contact</a>
+          <a href="{% url 'patient:blog' %}">blog</a>
+
+          <span class="cta">
+            <a href="{% url 'patient:signin' %}">Login</a>
+            <a href="{% url 'patient:signup' %}">Get Started</a>
+          </span>
+        </nav>
+      </header>
+
+      <section class="section1">
+        <!-- REGISTRATION MODAL BOX -->
+        {% for message in messages %}
+          <div class="alert.alert-{{ message.tags }} alert-dismissible fade away" role="alert">
+          <stong>Message:</strong> {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+          </div>
+        {% endfor %}
+
+        <div class="modal-cta">
+          <form action="" method="">
+            {% comment %} {% csrf_token %} {% endcomment %}
+            <h2>Register</h2>
+
+            <!-- FIRST NAME -->
+            <div class="formInput">
+              <input type="text" id="fname" name="fname" placeholder="Enter your First Name" required/>
+            </div>
+            <!-- LAST NAME -->
+            <div class="formInput">
+              <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required/>
+            </div>
+            <!-- EMAIL -->
+            <div class="formInput">
+              <input type="email" id="email" name="email"placeholder="Enter your Email address" required/>
+            </div>
+            <!-- USERNAME -->
+            <div class="formInput">
+              <input type="text" id="userID" name="username" placeholder="Enter your userID" required/>
+            </div>
+            <!-- PHONE NUMBER -->
+            <div class="formInput">
+              <input type="tel" id="telephone" name="telephone" placeholder="Enter your Phone Number" />
+            </div>
+            <!-- GENDER -->
+            <div class="formInput">
+              <select name="gender" id="gender" required>
+                <option value="other">Select your Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Rather Not Say</option>
+              </select>
+            </div>
+            <!-- PASSWORD -->
+            <div class="formInput">
+              <input type="password" id="pass1" name="pass1" placeholder="Enter your Password" required/>
+
+              <span class="eyeToggle">
+                <i class="fas fa-eye" id="eyeOpen"></i>
+                <i class="fas fa-eye-slash" id="eyeClosed"></i>
+              </span>
+            </div>
+            <!-- CONFIRM PASSWORD -->
+            <div class="formInput">
+              <input
+                type="password" id="pass2" name="pass2"
+                placeholder="Confirm your Password"
+              />
+              <span class="eyeToggle2">
+                <i class="fas fa-eye" id="eyeOpenkonfirm"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedkonfirm"></i>
+              </span>
+            </div>
+            <!-- SUBMIT  -->
+            <div class="submitField">
+              <input type="submit"/>
+            </div>
+          </form>
+        </div>
+
+        <!-- LOGIN MODAL BOX -->
+        <div class="loginModal">
+          <form action="">
+            {% comment %} {% csrf_token %} {% endcomment %}
+
+            <h2>Login</h2>
+
+            <div class="logform-Input">
+              <input
+                type="text"
+                placeholder="Enter your userID or Email address"
+              />
+            </div>
+
+            <div class="logform-Input">
+              <input
+                type="password"
+                name="pass1"
+                id="password"
+                placeholder="Enter your password"
+              />
+
+              <span class="loginToggle">
+                <i class="fas fa-eye" id="eyeOpenLogin"></i>
+                <i class="fas fa-eye-slash" id="eyeClosedLogin"></i>
+              </span>
+            </div>
+
+            <div class="submitLogin">
+              <input type="submit" />
+            </div>
+          </form>
+        </div>
+    <section>  
+      <div class="upperLand">
+        <h1>Your wellbeing is our priority, Get involved and get results!</h1>
+
+        <p>
+          Leveraging the power of technology to connect real people with real
+          problems to real health solutions.
+        </p>
+
+        <div class="appointLinks">
+          <a href="" class="signupAction">Book appointment</a>
+          <a href="" class="signupAction">
+            <i class="fas fa-ambulance"></i> Emergency!</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section2">
+      <!-- OUR STATS -->
+      <div class="stats">
+        <div class="statBox blue">
+          <p class="numberx">24/7</p>
+          <p class="NaN">online support</p>
+        </div>
+        <div class="statBox black">
+          <p class="numbers" data-val="100">0</p>
+          <p class="NaN">Specialists</p>
+        </div>
+        <div class="statBox blue">
+          <p class="numbers" data-val="1000">0</p>
+          <p class="NaN">active patients</p>
+        </div>
+        <div class="statBox black">
+          <p class="numbers" data-val="2200">0</p>
+          <p class="NaN">interested</p>
+        </div>
+      </div>
+
+      <!-- OUR SERVICES -->
+      <div class="services">
+        <h2>Our Services</h2>
+        <p>
+          We offer the best online healthcare services, you'll be pleased to
+          let us serve you!
+        </p>
+        <div class="serviceBoxes">
+          <a href="" class="signupAction">
+            <div class="servBox A">
+              <div class="upperServIcon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="lowerDiv">
+                <h3>Diagnosis / Therapy</h3>
+                <p>
+                  Find out what the Symptoms you're experiencing really mean
+                  and get lasting solution.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="signupAction">
+            <div class="servBox B">
+              <div class="upperServIcon">
+                <i class="fas fa-wheelchair"></i>
+              </div>
+              <div class="lowerDiv">
+                <h3>Patient Support</h3>
+                <p>
+                  Get support from donors and sponsors from around the world
+                  through our portal.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="signupAction">
+            <div class="servBox C">
+              <div class="upperServIcon">
+                <i class="fas fa-file-medical"></i>
+              </div>
+              <div class="lowerDiv">
+                <h3>Secure Medical records</h3>
+                <p>
+                  Keep track of all your medical history in one place with our
+                  secure database software.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="signupAction">
+            <div class="servBox A">
+              <div class="upperServIcon">
+                <i class="fas fa-search-dollar"></i>
+              </div>
+              <div class="lowerDiv">
+                <h3>Safe billing and insurance</h3>
+                <p>
+                  We provide reliable payment precedures that make it easy for
+                  you to pay your bills and keep track of your payments
+                  without the hassle of going to the bank.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="signupAction">
+            <div class="servBox B">
+              <div class="upperServIcon">
+                <i class="fas fa-ambulance"></i>
+              </div>
+              <div class="lowerDiv">
+                <h3>Emergency Support</h3>
+                <p>
+                  we are always available to respond to health emergency
+                  situations, don't hesitate to give us a call anyday.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="signupAction">
+            <div class="servBox C">
+              <div class="upperServIcon">
+                <i class="fas fa-prescription-bottle-alt"></i>
+              </div>
+              <div class="lowerDiv">
+                <h3>Prescriptions</h3>
+                <p>
+                  Get your prescription drugs delivered to your home from our
+                  online store or you can pick them up at any of our
+                  pharmacies.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ENROLLMENT BOX -->
+      <div class="enrollBox">
+        <p>Need Professional consultation and Therapy?</p>
+        <p>
+          You can schedule an appointment with a globally recognised
+          professional upon demand and necessity.
+        </p>
+
+        <div class="ctLink">
+          <a href="" onclick="signupCall()">Schedule Now</a>
+        </div>
+      </div>
+
+      <!-- CLIENT TESTIMONIES -->
+      <div class="testimonials">
+        <h2>What our clients say</h2>
+        <p>
+          Our clients are happier and satisfied with their results after a few
+          months of getting help.
+        </p>
+
+        <div class="reviewBox">
+          <div class="RevOverflow">
+            <!-- COMMENT 1 -->
+            <div class="comment">
+              <div class="leftPart">
+                <div class="imgHolder">
+                  <img src="{% static 'patient/assets/img/client1.jpg' %}" alt="" />
+                </div>
+                <p class="clientName">Thabisa Philips</p>
+                <div class="ratingStar">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="rightpart">
+                <i class="fas fa-quote-left"></i>
+                Medport Medical's customer service has blown me away. Nate was
+                of great assistance to me. He assisted me in obtaining my
+                doctor's prescription, keeping me informed, and ensuring that
+                my supplies were delivered to me on time. I was having some
+                problems, and Nick went above and beyond my expectations.
+                Thank you very much.
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <!-- COMMENT 2 -->
+            <div class="comment">
+              <div class="leftPart">
+                <div class="imgHolder">
+                  <img
+                    src="{% static 'patient/assets/img/senior-man-face-portrait-wearing-bowler-hat.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <p class="clientName">Oscar Madu</p>
+                <div class="ratingStar">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="rightpart">
+                <i class="fas fa-quote-left"></i>
+                Medport provided excellent service. They were very informative
+                and genuinely interested in meeting my wife's urological needs
+                and looking out for her catheter supplies. I received an
+                e-mail containing the tracking information as well as their
+                contact information in case I needed it or for future
+                reference. The supplies arrived the following day.
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <!-- COMMENT 3 -->
+            <div class="comment">
+              <div class="leftPart">
+                <div class="imgHolder">
+                  <img src="{% static 'patient/assets/img/clientx.jpg' %}" alt="" />
+                </div>
+                <p class="clientName">Jane Adegoke</p>
+                <div class="ratingStar">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="rightpart">
+                <i class="fas fa-quote-left"></i>
+                I had excellent service from Medport, the staff who answered
+                my call and scheduled the appointment on my behalf reassured
+                me by outlining everything that would occur. The examination
+                performed by Dr. Muktar was quite comprehensive. He was
+                considerate and gave me some really wise counsel.
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <!-- COMMENT 4 -->
+            <div class="comment">
+              <div class="leftPart">
+                <div class="imgHolder">
+                  <img
+                    src="{% static 'patient/assets/img/excited-young-man-celebrating-success-making-fist-pump-move-shouting-happy-winning-rejoicing-white-background.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <p class="clientName">Mark Dimba</p>
+                <div class="ratingStar">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="rightpart">
+                <i class="fas fa-quote-left"></i>
+                I used this service for the first time today, and it was
+                fantastic! The staff is so welcoming and knowledgeable. Alex
+                was fantastic; she showed me all the services they provide and
+                provided me helpful suggestions on how to keep my blood
+                vessels and heart healthy. AWESOME SERVICE!
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <!-- COMMENT 5 -->
+            <div class="comment">
+              <div class="leftPart">
+                <div class="imgHolder">
+                  <img src="{% static 'patient/assets/img/client3.jpg' %}" alt="" />
+                </div>
+                <p class="clientName">Jerry Hunter</p>
+                <div class="ratingStar">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+              <div class="rightpart">
+                <i class="fas fa-quote-left"></i>
+                extremely skilled and secure,  Simple and hospitable. In a
+                Covid-free, safe, clean, and well-organized environment, I and
+                my wife completed our certified to fly tests. We were all
+                satisfied and agreed to only visit this service again in the
+                future. Thank you for the excellent care and outstanding
+                customer service that the doctor and staff provided.
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swipeLeft_Right">&laquo; swipe for more &raquo;</div>
+      </div>
+
+      <!-- WHY YOU SHOULD CHOOSE US -->
+      <div class="whyUs">
+        <h2>Why Should you take our services?</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          eius quam ab labore porro suscipit.
+        </p>
+        <div class="whyNotUs">
+          <div class="partition L">
+            <img src="{% static 'patient/assets/img/background3.jpg' %}" alt="" />
+          </div>
+          <div class="partition R">
+            <div class="partRow">
+              <h3>Experience</h3>
+              <p>
+                We have very experienced and skilled prefessionals in the
+                field of electronic healthcare, relentlessly improving the
+                quality of medicine.
+              </p>
+            </div>
+            <div class="partRow">
+              <h3>Commitment</h3>
+              <p>
+                Our staff are highly committed to ensuring 100% satisfactory
+                results for all our patients without special preferences.
+              </p>
+            </div>
+            <div class="partRow">
+              <h3>Facilities</h3>
+              <p>
+                We have well equipped faciltities that enable us carry out our
+                operations in a very fashionable manner.
+              </p>
+            </div>
+            <div class="partRow">
+              <h3>Relationships</h3>
+              <p>
+                We believe in building quality relationships with our clients,
+                making it easier to work and interact over the long span of
+                time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REQUEST A CALL BACK -->
+      <div class="CallBack">
+        <div class="formpart Lefty">
+          <p>Need professional counselling?</p>
+
+          <h3>Request a Call Back Today</h3>
+
+          <p>
+            Place a call back request and one of our professional therapists
+            will call you right away.
+          </p>
+        </div>
+
+        <div class="formpart Righty">
+          <div class="input field">
+            <input type="text" placeholder="Your Name" />
+          </div>
+
+          <div class="input field">
+            <input type="tel" placeholder="Your Phone Number" />
+          </div>
+
+          <div class="input field">
+            <input type="date" placeholder="Date" />
+          </div>
+
+          <div class="submit field">
+            <input type="submit" value="Request Now" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+  <!-- FOOTER OF DOCUMENT -->
+  <footer>
+    <div class="topFoot">
+        <div class="desc">
+        <div class="footLogo">
+            <img src="{% static 'patient/assets/img/medical-1.png' %}" alt="" />
+            <span class="siteName">Medport</span>
+        </div>
+
+        <p>
+            Medport is a digital healthcare institution that provides
+            cutting-edge healthcare techniques and services to meet the needs
+            of an ever-expanding and highly demanding clientele.
+        </p>
+
+        <div class="socialIcons">
+            <a href="#">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+            <i class="fab fa-facebook"></i>
+            </a>
+            <a href="">
+            <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="">
+            <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        </div>
+
+        <div class="FooterLinkz">
+        <div class="footLink">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Contact</a>
+            <!-- <a href="">Blog</a> -->
+        </div>
+
+        <div class="footLink">
+            <h4>Services</h4>
+            <a href="">Diagnosis/ Therapy</a>
+            <a href="">Patient support</a>
+            <a href="">Secure medical records</a>
+            <a href="">safer billing and insurance</a>
+            <a href="">Emergency support</a>
+            <a href="">Prescriptions</a>
+        </div>
+
+        <div class="footLink">
+            <h4>Location</h4>
+            <a href=""> 10 Calabar Street, Aba, Nigeria. </a>
+        </div>
+        </div>
+    </div>
+
+    <div class="fullWidth">&copy; 2022 | All Rights reserved.</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="{% static 'patient/js/myScript.js' %}"></script>
+
+</body>
+</html>
